@@ -1,0 +1,9 @@
+<div *ngIf="!dataLoaded" class="lds-circle"><div></div></div>
+<ion-app *ngIf="dataLoaded">
+  <ion-content>
+    <app-header></app-header>
+    <app-movies-slot [likes]="likes" moviesTitle="Now Playing" [moviesOBS]="this.service.getNowPlayingMovies()"></app-movies-slot>
+    <app-movies-slot [likes]="likes" moviesTitle="Popular" [moviesOBS]="this.service.getPopularMovies()"></app-movies-slot>
+    <app-movies-slot [likes]="likes" moviesTitle="Upcoming" [moviesOBS]="this.service.getUpcomingMovies()"></app-movies-slot>
+  </ion-content>
+</ion-app>

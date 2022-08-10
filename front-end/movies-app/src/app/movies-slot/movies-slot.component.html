@@ -1,0 +1,45 @@
+<ion-text style="font-size: 2rem; padding: 10px 10px">{{
+  moviesTitle
+}}</ion-text>
+<ion-slides style="padding-bottom: 30px; height: auto" [options]="options">
+  <ion-slide
+    class=".{{ movie.id }}"
+    id="{{ movie.id }}"
+    (click)="onClick($event)"
+    style="height: 320px; width: 100%; margin: 0"
+    class="card-animado"
+    *ngFor="let movie of movies"
+  >
+    <ion-card
+      button="true"
+      style="margin: 0; object-fit: cover; position: relative"
+    >
+      <img
+        style="display: block; object-fit: cover; height: 300px; width: 100%"
+        src="{{ imageURL + movie.poster_path }}"
+      />
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          position: absolute;
+          z-index: 2;
+          bottom: 10px;
+          left: 10px;
+          color: white;
+        "
+      >
+        <fa-icon class="regular" size="2x" [icon]="faThumbsUp"></fa-icon>
+        <fa-icon
+          class="disable solid"
+          size="2x"
+          [icon]="faThumbsUpSolid"
+        ></fa-icon>
+        <ion-text style="font-weight: bold"
+          >{{ movie.likes ?? 0 }} Likes</ion-text
+        >
+      </div>
+    </ion-card>
+  </ion-slide>
+</ion-slides>

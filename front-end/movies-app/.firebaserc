@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "movies-votes-91b1f": {
+      "hosting": {
+        "app": [
+          "movies-votes-91b1f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "movies-votes-91b1f"
+  }
+}

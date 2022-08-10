@@ -1,0 +1,11 @@
+.card-animado{
+  transition: 0.3s;
+}
+
+.card-animado:hover{
+  transform: scale(1.01);
+}
+
+.disable {
+  display: none;
+}

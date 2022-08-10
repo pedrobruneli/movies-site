@@ -1,0 +1,17 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDYkT2OKSoah27oiFmbb40ANl3_ZGiQpWU",
+  authDomain: "movies-votes-91b1f.firebaseapp.com",
+  projectId: "movies-votes-91b1f",
+  storageBucket: "movies-votes-91b1f.appspot.com",
+  messagingSenderId: "92404757620",
+  appId: "1:92404757620:web:7123d256fbae6ce3de0d21"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
