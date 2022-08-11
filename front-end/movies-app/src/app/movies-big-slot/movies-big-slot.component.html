@@ -2,7 +2,7 @@
 <ion-slides *ngIf="dataLoaded" class="moviesSlides" [options]="options">
   <ion-slide
     class=".{{ movie.id }}"
-    id="{{ movie.id }}"
+    [attr.data-internalid]="movie.id"
     (click)="onClick($event)"
     class="card-animado moviesSlides__slide"
     *ngFor="let movie of movies"
