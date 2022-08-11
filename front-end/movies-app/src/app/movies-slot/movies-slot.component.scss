@@ -1,11 +1,50 @@
-.card-animado{
+.card-animado {
   transition: 0.3s;
 }
 
-.card-animado:hover{
+.card-animado:hover {
   transform: scale(1.01);
 }
 
 .disable {
   display: none;
+}
+
+.movieTitle {
+  font-size: 2rem;
+  padding: 10px 10px;
+}
+
+.moviesSlides {
+  padding-bottom: 30px;
+  height: auto;
+  &__slide {
+    height: 320px;
+    width: 100%;
+    margin: 0;
+    &__card {
+      margin: 0;
+      object-fit: cover;
+      position: relative;
+      &__poster {
+        display: block;
+        object-fit: cover;
+        height: 300px;
+        width: 100%;
+        &__likes-container {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          position: absolute;
+          z-index: 2;
+          bottom: 10px;
+          left: 10px;
+          color: white;
+          &__text {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
 }
