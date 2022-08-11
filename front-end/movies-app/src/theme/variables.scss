@@ -3,8 +3,21 @@
 
 /** Ionic CSS Variables **/
 :root {
+  --eerie: #1D1D1D;
+  --white: #FFFFFF;
+  --razzmatazz: #E10856;
+  --magenta: #FF00F5;
+  --teal: #0FEFFD;
+
+  --dust: #C4C4C4;
+  --carbon: #333333;
+  --nero: #262626;
+  --black: #000000;
+
+  --font: 'Roboto', sans-serif;
+
   /** primary **/
-  --ion-color-primary: #eb445a;
+  --ion-color-primary: var(--eerie);
   --ion-color-primary-rgb: 235, 68, 90;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;

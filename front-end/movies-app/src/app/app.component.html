@@ -1,9 +1,19 @@
 <div *ngIf="!dataLoaded" class="lds-circle"><div></div></div>
-<ion-app *ngIf="dataLoaded">
-  <ion-content>
-    <app-header></app-header>
-    <app-movies-slot [likes]="likes" moviesTitle="Now Playing" [moviesOBS]="this.service.getNowPlayingMovies()"></app-movies-slot>
-    <app-movies-slot [likes]="likes" moviesTitle="Popular" [moviesOBS]="this.service.getPopularMovies()"></app-movies-slot>
-    <app-movies-slot [likes]="likes" moviesTitle="Upcoming" [moviesOBS]="this.service.getUpcomingMovies()"></app-movies-slot>
+<ion-app style="display: flex" *ngIf="dataLoaded">
+  <ion-content class="content" color="primary">
+    <div class="page">
+      <app-header style="position: fixed;  z-index: 2;"></app-header>
+      <app-movie-banner></app-movie-banner>
+    </div>
+    <app-movies-slot class="moviesSlot" moviesTitle="Popular" [likes]="likes" [moviesOBS]="this.service.getPopularMovies()"></app-movies-slot>
+    <app-movies-slot class="moviesSlot" moviesTitle="Now Playing" [likes]="likes" [moviesOBS]="this.service.getNowPlayingMovies()"></app-movies-slot>
+    <app-movies-slot class="moviesSlot" moviesTitle="Upcoming" [likes]="likes" [moviesOBS]="this.service.getUpcomingMovies()"></app-movies-slot>
+
   </ion-content>
+  <!--   <ion-content class="page"> -->
+
+  <!--     <app-movies-slot [likes]="likes" moviesTitle="Now Playing" [moviesOBS]="this.service.getNowPlayingMovies()"></app-movies-slot>
+    <app-movies-slot [likes]="likes" moviesTitle="Popular" [moviesOBS]="this.service.getPopularMovies()"></app-movies-slot>
+    <app-movies-slot [likes]="likes" moviesTitle="Upcoming" [moviesOBS]="this.service.getUpcomingMovies()"></app-movies-slot> -->
+  <!--   </ion-content> -->
 </ion-app>

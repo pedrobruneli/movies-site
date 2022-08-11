@@ -11,8 +11,10 @@
 }
 
 .movieTitle {
+  font-family: 'Roboto';
+  font-weight: 500;
   font-size: 2rem;
-  padding: 10px 10px;
+  margin-left: 70px;
 }
 
 .moviesSlides {
@@ -26,6 +28,7 @@
       margin: 0;
       object-fit: cover;
       position: relative;
+      border-radius: 0;
       &__poster {
         display: block;
         object-fit: cover;
