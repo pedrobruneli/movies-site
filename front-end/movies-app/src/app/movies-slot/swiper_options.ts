@@ -21,3 +21,24 @@ export const options = {
     },
   },
 };
+
+export const bigOptions = {
+  slidesPerView: 4,
+  spaceBetween: 5,
+  speed: 400,
+  loop: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    600:{
+      slidesPerView: 2,
+    },
+    800:{
+      slidesPerView: 3,
+    },
+    1024:{
+      slidesPerView: 4,
+    }
+  },
+};

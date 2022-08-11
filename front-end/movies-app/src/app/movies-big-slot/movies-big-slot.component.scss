@@ -1,0 +1,53 @@
+.card-animado {
+  transition: 0.3s;
+}
+
+.card-animado:hover {
+  transform: scale(1.01);
+}
+
+.disable {
+  display: none;
+}
+
+.movieTitle {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 2rem;
+  margin-left: 70px;
+}
+
+.moviesSlides {
+  padding-bottom: 30px;
+  height: auto;
+  &__slide {
+    height: 520px;
+    width: 100%;
+    margin: 0;
+    &__card {
+      margin: 0;
+      object-fit: cover;
+      position: relative;
+      border-radius: 0;
+      &__poster {
+        display: block;
+        object-fit: cover;
+        height: 500px;
+        width: 100%;
+        &__likes-container {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          position: absolute;
+          z-index: 2;
+          bottom: 10px;
+          left: 10px;
+          color: white;
+          &__text {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

@@ -32,6 +32,12 @@ export class MoviesServiceService {
     );
   }
 
+  getTopRatedMovies(): Observable<IMovieData> {
+    return this.httpClient.get<IMovieData>(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=pt-BR&page=1`
+    );
+  }
+
   getLikesMovies(): Observable<ILike[]> {
     return this.httpClient.get<ILike[]>(`${DB_URL}getLikes`);
   }

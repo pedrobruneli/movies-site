@@ -1,3 +1,4 @@
+import { MoviesBigSlotComponent } from './movies-big-slot/movies-big-slot.component';
 import { MovieBannerComponent } from './movie-banner/movie-banner.component';
 import { environment } from '../environments/environment';
 import { RouteReuseStrategy } from '@angular/router';
@@ -24,6 +25,7 @@ import { USE_EMULATOR as USE_FIRESTORE_EMULATOR } from '@angular/fire/compat/fir
     HeaderComponent,
     MoviesSlotComponent,
     MovieBannerComponent,
+    MoviesBigSlotComponent
   ],
   imports: [
     BrowserModule,

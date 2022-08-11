@@ -2,13 +2,37 @@
 <ion-app style="display: flex" *ngIf="dataLoaded">
   <ion-content class="content" color="primary">
     <div class="page">
-      <app-header style="position: fixed;  z-index: 2;"></app-header>
+      <app-header style="position: fixed; z-index: 2"></app-header>
       <app-movie-banner></app-movie-banner>
     </div>
-    <app-movies-slot class="moviesSlot" moviesTitle="Popular" [likes]="likes" [moviesOBS]="this.service.getPopularMovies()"></app-movies-slot>
-    <app-movies-slot class="moviesSlot" moviesTitle="Now Playing" [likes]="likes" [moviesOBS]="this.service.getNowPlayingMovies()"></app-movies-slot>
-    <app-movies-slot class="moviesSlot" moviesTitle="Upcoming" [likes]="likes" [moviesOBS]="this.service.getUpcomingMovies()"></app-movies-slot>
-
+    <app-movies-slot
+      *ngIf="dataLoaded"
+      class="moviesSlot"
+      moviesTitle="Popular"
+      [likes]="likes"
+      [moviesOBS]="this.service.getPopularMovies()"
+    ></app-movies-slot>
+    <app-movies-big-slot
+      *ngIf="dataLoaded"
+      class="moviesSlot"
+      moviesTitle="Top rated"
+      [likes]="likes"
+      [moviesOBS]="this.service.getTopRatedMovies()"
+    ></app-movies-big-slot>
+    <app-movies-slot
+      *ngIf="dataLoaded"
+      class="moviesSlot"
+      moviesTitle="Now Playing"
+      [likes]="likes"
+      [moviesOBS]="this.service.getNowPlayingMovies()"
+    ></app-movies-slot>
+    <app-movies-slot
+      *ngIf="dataLoaded"
+      class="moviesSlot"
+      moviesTitle="Upcoming"
+      [likes]="likes"
+      [moviesOBS]="this.service.getUpcomingMovies()"
+    ></app-movies-slot>
   </ion-content>
   <!--   <ion-content class="page"> -->
 

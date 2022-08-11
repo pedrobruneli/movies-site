@@ -9,6 +9,7 @@
   height: 650px;
   width: 100vw;
   position: relative;
+  margin-bottom: 20px;
   &__image {
     height: 100%;
     position: absolute;
@@ -57,5 +58,11 @@
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  .banner{
+    display: none;
   }
 }

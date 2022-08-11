@@ -1,7 +1,6 @@
 import { MoviesServiceService } from './services/movies-service.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { delay, retryWhen, take, tap } from 'rxjs/operators';
-import { throwError } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,6 +13,7 @@ export class AppComponent {
   constructor(public service: MoviesServiceService) {
     this.tryConnect();
   }
+
 
   private tryConnect() {
     let tries = 0;

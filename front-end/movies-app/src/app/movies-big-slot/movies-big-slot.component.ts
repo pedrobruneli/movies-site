@@ -1,30 +1,28 @@
-import { Observable } from 'rxjs';
-import { Component, Input, OnInit } from '@angular/core';
-
 import { MoviesServiceService } from './../services/movies-service.service';
-import { IMovie } from './../models/movies.model';
 import { IMovieData } from './../models/dataRes.model';
-
+import { Observable } from 'rxjs';
+import { IMovie } from './../models/movies.model';
+import { Component, Input, OnInit } from '@angular/core';
 import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
 import { faThumbsUp as faThumbsUpSolid } from '@fortawesome/free-solid-svg-icons';
-import { options } from './swiper_options';
+import { bigOptions } from '../movies-slot/swiper_options';
 
 @Component({
-  selector: 'app-movies-slot',
-  templateUrl: './movies-slot.component.html',
-  styleUrls: ['./movies-slot.component.scss'],
+  selector: 'app-movies-big-slot',
+  templateUrl: './movies-big-slot.component.html',
+  styleUrls: ['./movies-big-slot.component.scss'],
 })
-export class MoviesSlotComponent implements OnInit {
+export class MoviesBigSlotComponent implements OnInit {
   @Input() moviesTitle: string;
   @Input() moviesOBS: Observable<IMovieData>;
   @Input() likes: object;
-  movies: IMovie[];
 
   faThumbsUp = faThumbsUp;
   faThumbsUpSolid = faThumbsUpSolid;
 
+  movies: IMovie[];
   imageURL = 'https://image.tmdb.org/t/p/original/';
-  options = options;
+  options = bigOptions;
   dataLoaded = false;
 
   constructor(private service: MoviesServiceService) {}
