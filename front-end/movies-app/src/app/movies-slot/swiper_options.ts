@@ -19,6 +19,9 @@ export const options = {
     1400: {
       slidesPerView: 8.5,
     },
+    1800: {
+      slidesPerView: 9.5,
+    },
   },
 };
 
@@ -31,14 +34,20 @@ export const bigOptions = {
     0: {
       slidesPerView: 1,
     },
-    600:{
+    600: {
       slidesPerView: 2,
     },
-    800:{
+    800: {
       slidesPerView: 3,
     },
-    1024:{
+    1024: {
       slidesPerView: 4,
-    }
+    },
+    1550: {
+      slidesPerView: 5,
+    },
+    1800: {
+      slidesPerView: 6,
+    },
   },
 };

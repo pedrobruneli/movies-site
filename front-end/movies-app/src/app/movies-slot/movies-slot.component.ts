@@ -36,22 +36,16 @@ export class MoviesSlotComponent implements OnInit {
     const id = $event.currentTarget.dataset.internalid;
     const elements = document.getElementsByClassName(`.${id}`);
     let likedFirebase = false;
-    let likedText = false;
     for (let i = 0; i < elements.length; i++) {
       const element = elements.item(i);
       const likes = element.querySelector('ion-text');
       element.querySelectorAll('fa-icon').forEach((icon) => {
-        icon.classList.toggle('disable');
         if (!likedFirebase) {
           this.changeLikeButton(icon, id);
           likedFirebase = true;
         }
-        if (!likedText) {
-          this.changeText(icon, likes);
-          likedText = true;
-        }
+        icon.classList.toggle('disable');
       });
-      likedText = false;
     }
   }
 
@@ -60,33 +54,17 @@ export class MoviesSlotComponent implements OnInit {
       icon.classList.contains('regular') &&
       icon.classList.contains('disable')
     ) {
-      this.service.addLike(id);
-    } else {
       this.service.removeLike(id);
-    }
-  }
-
-  changeText(icon: Element, likes: HTMLIonTextElement) {
-    if (
-      icon.classList.contains('regular') &&
-      icon.classList.contains('disable')
-    ) {
-      const likesValue = Number(likes.textContent.split(' Likes')[0]) + 1;
-      likes.textContent = likesValue + ' Likes';
+      this.likes[id].likes -= 1;
     } else {
-      const likesValue = Number(likes.textContent.split(' Likes')[0]) - 1;
-      likes.textContent = likesValue + ' Likes';
+      this.service.addLike(id);
+      this.likes[id].likes += 1;
     }
   }
 
   populateMoviesAndLikes() {
     this.moviesOBS.subscribe((val) => {
       this.movies = val.results;
-      this.movies.forEach((movie) => {
-        if (this.likes[movie.id]) {
-          movie.likes = this.likes[movie.id].likes;
-        }
-      });
       this.dataLoaded = true;
     });
   }

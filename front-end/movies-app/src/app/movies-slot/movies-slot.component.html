@@ -6,7 +6,7 @@
     (click)="onClick($event)"
     class="card-animado moviesSlides__slide"
     *ngFor="let movie of movies"
-    >
+  >
     <ion-card button="true" class="moviesSlides__slide__card">
       <img
         class="moviesSlides__slide__card__poster"
@@ -21,7 +21,7 @@
         ></fa-icon>
         <ion-text
           class="moviesSlides__slide__card__poster__likes-container__text"
-          >{{ movie.likes ?? 0 }} Likes</ion-text
+          >{{ likes[movie.id]?.likes ?? 0 }} Likes</ion-text
         >
       </div>
     </ion-card>
